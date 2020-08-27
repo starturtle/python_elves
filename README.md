@@ -30,6 +30,7 @@ Sample:
     /home/my_dir/someDirectory/someNestedDirectory:
 
 -------- output.xml -------
+
     <home>
       <my_dir>
         <oneFile.txt />
