@@ -1,4 +1,3 @@
-from jqlcomposer import jqlcomposer
 import subprocess
 import filecmp
 
@@ -8,7 +7,7 @@ def test_jqlcomposer_main_asfile():
   for i in range(len(TEST_TERMS)):
     idx = i+1
     with open(f"testout{idx}.txt", "w") as outfile:
-      subprocess.run(["python", "jqlcomposer.py", TEST_TERMS[i], "--filename", f"test{idx}.json"], stdout=outfile)
+      subprocess.run(["python", "src/jqlcomposer.py", TEST_TERMS[i], "--filename", f"test{idx}.json"], stdout=outfile)
     assert 0 == filecmp.cmp(f"testout{idx}.txt", f"expect{idx}.txt")
   
 def test_jqlcomposer_main_astext():
@@ -18,6 +17,6 @@ def test_jqlcomposer_main_astext():
     with open(f"test{idx}.json", "r") as infile:
       json_contents = infile.read()
     with open(f"testout{idx}.txt", "w") as outfile:
-      subprocess.run(["python", "jqlcomposer.py", TEST_TERMS[i], f'"{json_contents}"'], stdout=outfile)
+      subprocess.run(["python", "src/jqlcomposer.py", TEST_TERMS[i], f'"{json_contents}"'], stdout=outfile)
     assert 0 == filecmp.cmp(f"testout{idx}.txt", f"expect{idx}.txt")
   
