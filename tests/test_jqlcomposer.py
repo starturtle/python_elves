@@ -6,17 +6,17 @@ TEST_TERMS=["summer"]
 def test_jqlcomposer_main_asfile():
   for i in range(len(TEST_TERMS)):
     idx = i+1
-    with open(f"testout{idx}.txt", "w") as outfile:
-      subprocess.run(["python", "src/jqlcomposer.py", TEST_TERMS[i], "--filename", f"test{idx}.json"], stdout=outfile)
-    assert 0 == filecmp.cmp(f"testout{idx}.txt", f"expect{idx}.txt")
+    with open(f"tests/testout{idx}.txt", "w") as outfile:
+      subprocess.run(["python", "src/jqlcomposer.py", TEST_TERMS[i], "--filename", f"tests/test{idx}.json"], stdout=outfile)
+    assert 0 == filecmp.cmp(f"tests/testout{idx}.txt", f"tests/expect{idx}.txt")
   
 def test_jqlcomposer_main_astext():
   for i in range(len(TEST_TERMS)):
     idx = i+1
     json_contents = ""
-    with open(f"test{idx}.json", "r") as infile:
+    with open(f"tests/test{idx}.json", "r") as infile:
       json_contents = infile.read()
-    with open(f"testout{idx}.txt", "w") as outfile:
+    with open(f"tests/testout{idx}.txt", "w") as outfile:
       subprocess.run(["python", "src/jqlcomposer.py", TEST_TERMS[i], f'"{json_contents}"'], stdout=outfile)
-    assert 0 == filecmp.cmp(f"testout{idx}.txt", f"expect{idx}.txt")
+    assert 0 == filecmp.cmp(f"tests/testout{idx}.txt", f"tests/expect{idx}.txt")
   
