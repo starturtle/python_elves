@@ -1,0 +1,5 @@
+{
+  "summer": "{month_in_long_day_territory} AND {temperature_above_lukewarm}",
+  "month_in_long_day_territory": "month IN (June, July, August)",
+  "temperature_above_lukewarm": "temperature > 20"
+}

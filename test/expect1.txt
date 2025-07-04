@@ -1,0 +1,1 @@
+("month IN (June, July, August)") AND (temperature > 20)
