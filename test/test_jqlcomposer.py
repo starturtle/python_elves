@@ -1,4 +1,4 @@
-import jqlcomposer
+from jqlcomposer import jqlcomposer
 import subprocess
 import filecmp
 
