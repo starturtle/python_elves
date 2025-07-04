@@ -51,3 +51,9 @@ The script is used to compose complex JQL queries from a JSON-encoded dictionary
 It will enclose the expansion of sub-queries in parentheses while expanding, in order to ensure the original precedence.
 
 In order to use one query inside another, use the sub-query's name in brackets inside the outer query. See sample.json for an example.
+
+## How Many Do I Need?
+The minecraft/hmdin script is basically a counting formatter that can help you keep track of large item quantities in Minecraft.
+For the time being, it supports items that stack at 64 pieces, and expects single chests with 27 slots. 
+
+Input: the amount of items to count. Output: `<number of chests>c, <number of additional stacks>s, <number of additional items>b`.
